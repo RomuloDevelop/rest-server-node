@@ -4,7 +4,7 @@ const app = express();
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
-app.use(express.json);
+app.use(express.json());
 
 //Routes
 app.get('/usuario', (req, res)=>{
@@ -34,6 +34,10 @@ app.put('/usuario/:id', (req, res)=>{
 
 app.delete('/usuario', (req, res)=>{
     res.json('delete Usuario');
+});
+
+app.get('/', (req, res)=>{
+    res.send('Hello');
 });
 
 app.listen(process.env.PORT, ()=>{
