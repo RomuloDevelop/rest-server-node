@@ -4,6 +4,7 @@
   "description": "Rest server con node y express",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server",
     "test": "test"
   },
   "keywords": [
