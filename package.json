@@ -1,0 +1,19 @@
+{
+  "name": "restserver",
+  "version": "1.0.0",
+  "description": "Rest server con node y express",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "MongoDB"
+  ],
+  "author": "Rómulo Corona",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
