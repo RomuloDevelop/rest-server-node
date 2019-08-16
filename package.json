@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Rest server con node y express",
   "main": "index.js",
+  "engines":{
+    "node": "12.8.0"
+  },
   "scripts": {
     "start": "node server/server",
     "test": "test"
@@ -15,6 +18,10 @@
   "author": "Rómulo Corona",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.8",
+    "mongoose-unique-validator": "^2.0.3",
+    "underscore": "^1.9.1"
   }
 }

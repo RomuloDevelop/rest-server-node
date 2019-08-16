@@ -1,45 +1,29 @@
 require('./config/config');
 const express = require('express');
+const mongoose = require('mongoose');
+const users = require('./routes/users');
 const app = express();
+
+const PORT = process.env.PORT;
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //Routes
-app.get('/usuario', (req, res)=>{
-    res.json('get Usuario');
-});
+app.use('/api', users);
 
-app.post('/usuario', (req, res)=>{
-    let body = request.body;
-
-    if(body.nombre === undefined){
-        res.status(400).json({
-            ok: false,
-            mensaje: 'El nombre es necesario'
-        });
-    } else {
-        res.json({persona:body});
-    }
-
-});
-
-app.put('/usuario/:id', (req, res)=>{
-    let id = req.params.id;
-    res.json({
-        id
-    });
-});
-
-app.delete('/usuario', (req, res)=>{
-    res.json('delete Usuario');
+mongoose.connect(process.env.URLDB,
+{useNewUrlParser:true, useCreateIndex:true},
+(err)=>{
+    if(err) throw err;
+    console.log(`BD online: ${process.env.URLDB}`);
 });
 
 app.get('/', (req, res)=>{
     res.send('Hello');
 });
 
-app.listen(process.env.PORT, ()=>{
-    console.log('Escuchando puerto', 3000);
+app.listen(PORT, ()=>{
+    console.log('Escuchando puerto', PORT);
 });
