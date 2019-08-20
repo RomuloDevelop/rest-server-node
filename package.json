@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Rest server con node y express",
   "main": "index.js",
-  "engines":{
+  "engines": {
     "node": "12.8.0"
   },
   "scripts": {
+    "dev": "nodemon server/server",
     "start": "node server/server",
     "test": "test"
   },
@@ -20,6 +21,7 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.8",
     "mongoose-unique-validator": "^2.0.3",
     "underscore": "^1.9.1"

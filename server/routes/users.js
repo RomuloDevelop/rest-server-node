@@ -4,7 +4,7 @@ const _ = require('underscore');
 const User = require('../models/users');
 const users = express.Router();
 
-users.route('/usuario')
+users.route('/')
 .get((req, res)=>{
 
     let from = req.query.from || 0;
@@ -56,7 +56,7 @@ users.route('/usuario')
     });
 })
 
-users.route('/usuario/:id')
+users.route('/:id')
 .put((req, res)=>{
     let id = req.params.id;
     let body = _.pick(req.body,['nombre','email','img','role','state']);
