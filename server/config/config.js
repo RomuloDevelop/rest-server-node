@@ -15,3 +15,4 @@ else
 
 process.env.URLDB = urlDB;
 
+process.env.GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || "511100157269-5gpov3sdltrsns5pbumdee41d9bgthtl.apps.googleusercontent.com";

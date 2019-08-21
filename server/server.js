@@ -1,4 +1,5 @@
 require('./config/config');
+const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
@@ -9,6 +10,9 @@ const PORT = process.env.PORT;
 //Middlewares
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+//Publics
+app.use(express.static(path.resolve(__dirname, '../public')))
 
 //Routes
 app.use(routes);
