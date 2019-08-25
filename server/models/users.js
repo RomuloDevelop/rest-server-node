@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uniqueValidator= require('mongoose-unique-validator');;
+const uniqueValidator= require('mongoose-unique-validator');
 
 const roles = {
     values: ['USER_ROLE', 'ADMIN_ROLE'],

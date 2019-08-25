@@ -8,6 +8,10 @@ const app = express();
 const PORT = process.env.PORT;
 
 //Middlewares
+if(process.env.NODE_ENV === 'dev'){
+    const morgan = require('morgan');
+    app.use(morgan('tiny'));
+}
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 

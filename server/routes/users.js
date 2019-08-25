@@ -59,15 +59,16 @@ users.route('/')
 users.route('/:id')
 .put((req, res)=>{
     let id = req.params.id;
-    let body = _.pick(req.body,['nombre','email','img','role','state']);
-
+    let body = _.pick(req.body,['nombre','email','img','role']);
+    console.log(id);
+    console.log(body)
     User.findByIdAndUpdate(id, body,{ 
         new:true,
-        runValidators: true 
+        runValidators: true,
+        context: 'query' 
     }, (err, userDB)=>{
         if(err){
-
-            return res.status(400).json({
+            return res.status(500).json({
                 ok: false,
                 err
             });
@@ -83,7 +84,7 @@ users.route('/:id')
     let id = req.params.id;
 
     //User.findByIdAndRemove(id, (err, user)=>{
-    User.findByIdAndUpdate(id,{state:false}, (err, user)=>{
+        User.findByIdAndUpdate(id,{state:false},{new:true}, (err, user)=>{
         if(err){
             return res.status(400).json({
                 ok: false,
