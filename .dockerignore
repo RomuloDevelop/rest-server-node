@@ -1,0 +1,3 @@
+#Files to ignore while copying files to the workdir
+node_modules
+npm-debug.log
