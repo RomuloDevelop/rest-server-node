@@ -27,7 +27,7 @@
     "mongoose": "^5.6.8",
     "mongoose-unique-validator": "^2.0.3",
     "save-dev": "^2.0.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "morgan": "^1.9.1"
